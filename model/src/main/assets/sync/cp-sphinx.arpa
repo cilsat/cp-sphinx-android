@@ -1,0 +1,60 @@
+
+\data\
+ngram 1=17
+ngram 2=30
+ngram 3=0
+
+\1-grams:
+-0.30103	</s>
+-99	<s>	-6.601903
+-1.477121	cerebralpalsy	-99
+-1.477121	jelas	-99
+-1.477121	laper	-99
+-1.477121	lemari	-99
+-1.477121	motor	-99
+-1.477121	murah	-99
+-1.477121	pergi	-99
+-1.477121	pulang	-99
+-1.477121	ralat	-99
+-1.477121	repot	-99
+-1.477121	rinal	-99
+-1.477121	sekarang	-99
+-1.477121	telor	-99
+-1.477121	toilet	-99
+-1.477121	ulang	-99
+
+\2-grams:
+-1.176091	<s> cerebralpalsy
+-1.176091	<s> jelas
+-1.176091	<s> laper
+-1.176091	<s> lemari
+-1.176091	<s> motor
+-1.176091	<s> murah
+-1.176091	<s> pergi
+-1.176091	<s> pulang
+-1.176091	<s> ralat
+-1.176091	<s> repot
+-1.176091	<s> rinal
+-1.176091	<s> sekarang
+-1.176091	<s> telor
+-1.176091	<s> toilet
+-1.176091	<s> ulang
+0	cerebralpalsy </s>
+0	jelas </s>
+0	laper </s>
+0	lemari </s>
+0	motor </s>
+0	murah </s>
+0	pergi </s>
+0	pulang </s>
+0	ralat </s>
+0	repot </s>
+0	rinal </s>
+0	sekarang </s>
+0	telor </s>
+0	toilet </s>
+0	ulang </s>
+
+\3-grams:
+
+\end\

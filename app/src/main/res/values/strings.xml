@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Say It</string>
+    <string name="kws_caption">Tekan tombol untuk memulai.</string>
+    <string name="button_up">Mulai</string>
+    <string name="button_down">...</string>
+</resources>
