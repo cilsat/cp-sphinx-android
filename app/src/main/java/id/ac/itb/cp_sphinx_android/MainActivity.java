@@ -2,6 +2,7 @@ package id.ac.itb.cp_sphinx_android;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
@@ -144,15 +145,18 @@ public class MainActivity extends AppCompatActivity implements
             createOldSoundPool();
         }
 
-        raws = new HashMap<>();
         File dict = new File(assetsDir, "cp-sphinx.dic");
+        Context context = getApplicationContext();
+        String packageName = getPackageName();
+        raws = new HashMap<>();
         try(BufferedReader br = new BufferedReader(new FileReader(dict))) {
             String line = br.readLine();
             while (line != null) {
                 String name = line.split(" ")[0];
                 Log.d("NAME", name);
-                int rawID = soundPool.load(getApplicationContext(), getResources().getIdentifier(name, "raw", getPackageName()), 1);
-                raws.put(name, rawID);
+                int rawID = getResources().getIdentifier(name, "raw", packageName);
+                int rawKey = soundPool.load(context, rawID, 1);
+                raws.put(name, rawKey);
                 line = br.readLine();
             }
         }
@@ -230,7 +234,6 @@ public class MainActivity extends AppCompatActivity implements
             String[] splits = text.split(" ");
             if (splits.length > 1) text = splits[splits.length - 1];
             ((TextView) findViewById(R.id.result_text)).setText(text);
-            //makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
             if (raws.containsKey(text)) {
                 soundPool.play(raws.get(text), 1, 1, 1, 0, 1f);
             }

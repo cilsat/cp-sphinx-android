@@ -10,5 +10,23 @@
         sha1="2eddf43a726a7b2050d88a36f5d4802081ff8ac5">
         <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_466e96e08e11b51d00d361da605fc18385ccb137.jar" />
     </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_b68ba6d8925f05384194579ecf1e4756e153f0ae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8c541124ebc345e6cc62fd396c02679a52c1a66f">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_e559c44a3371660296d9fbfbff21f164ee037855/classes.dex" />
+    </item>
 
 </items>
