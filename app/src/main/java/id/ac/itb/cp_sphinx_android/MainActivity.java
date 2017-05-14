@@ -24,9 +24,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 
-import edu.cmu.pocketsphinx.Assets;
-import edu.cmu.pocketsphinx.Hypothesis;
-import edu.cmu.pocketsphinx.RecognitionListener;
+import edu.cmu.pocketsphinx.*;
 
 public class MainActivity extends AppCompatActivity implements
         RecognitionListener{
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements
     private static final int PERMISSIONS_REQUEST_RECORD_AUDIO = 1;
 
     /* Declare speech recognizer */
-    private SpeechRecognizerPlay recognizer;
+    private SpeechRecognizer recognizer;
     private HashMap<String, Integer> captions;
 
     /* Button to start recognition */
@@ -127,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements
         // The recognizer can be configured to perform multiple searches
         // of different kind and switch between them
 
-        recognizer = SpeechRecognizerPlaySetup.defaultSetup()
+        recognizer = SpeechRecognizerSetup.defaultSetup()
                 .setAcousticModel(new File(assetsDir, "semi-250"))
                 .setDictionary(new File(assetsDir, "cp-sphinx.dic"))
                 //.setRawLogDir(assetsDir) // Logging of raw audio
@@ -214,6 +212,8 @@ public class MainActivity extends AppCompatActivity implements
     public void onPartialResult(Hypothesis hypothesis) {
         if (hypothesis != null) {
             String text = hypothesis.getHypstr();
+            String[] splits = text.split(" ");
+            if (splits.length > 1) text = splits[splits.length - 1];
             ((TextView) findViewById(R.id.result_text)).setText(text);
         } else {
             ((TextView) findViewById(R.id.result_text)).setText("...");
