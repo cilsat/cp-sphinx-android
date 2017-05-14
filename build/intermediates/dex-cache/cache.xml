@@ -3,129 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/75c631db1456add193bb954e23af71ed7b03a44d/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="6849e24d764fc75a3df80f7c1e39196c885c4f8b">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_456cc44c810f29c9f4ceaa9eeb42fcf63e1f9f3f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_eb9854e5104c9c3e4ae8bf81058cb53870956762.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/37eb8076d97165e259fb458193bc704716985a78/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_f28cf6e8795b059d646bce157e150674788603e8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/support-annotations-25.3.1_37eb64bace0dec8406d2e79985121327087bd495.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/8fe8c135ed8870afbecc776966a2cccf0c4d800e/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_f30c024962fb26f3fb6cd305eb8651df378fd2bd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/4a1c1bd02636e20451a11637c1c6eaded5f4dc4d/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_da8c145f82552a60490852b5c1a4df8ce2c48070.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/f2bb94cf1564b86264b2f7cfc0102755ca7cf8d7/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_27a085f729cde9b8700a9a8f4ef90854f1003803.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/cilsat/dev/cp-sphinx-android/model/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="2eddf43a726a7b2050d88a36f5d4802081ff8ac5">
         <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_466e96e08e11b51d00d361da605fc18385ccb137.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/38af275838b7ea8a4dd1a5e508cdc66b590d749a/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_36f049430a1a2823d65fd4da3cba7de5bcbe2efd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/6d66b1cec9b0b8e2f92a550c8c5f4dfdc8a6e512/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_21b96de31b6acb358cdb32d43c943560e711e71c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/f08d3dec27f44f206db08c43fb93598db356c2db/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_aed06adce742da230546b9789712b2e2fb915008.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/34c85c2c70e773b835919082987dc760f396c2e6/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_7133a91bfd1f2de122fa2bd069ba891dabdc5ecf.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/b71e1ee1cac291cb6bc3a6942770235b84142aed/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_9eec296898057d74240c458838048c4ac905893e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cilsat/.android/build-cache/de1b774cc6c8d492b240af162a32f360ff3bfdae/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_0edfe884a66ff8d5b8de7b36b306c88180fe9ff2.jar" />
     </item>
 
 </items>

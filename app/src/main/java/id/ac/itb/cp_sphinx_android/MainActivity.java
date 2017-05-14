@@ -1,18 +1,26 @@
 package id.ac.itb.cp_sphinx_android;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.content.pm.PackageManager;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.ImageButton;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -37,6 +45,10 @@ public class MainActivity extends AppCompatActivity implements
     ImageButton button;
     private boolean isPlaying = false;
 
+    /* Audio buffering manager */
+    private HashMap<String, Integer> raws;
+    private SoundPool soundPool;
+
     @Override
     public void onCreate(Bundle state) {
         super.onCreate(state);
@@ -57,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, PERMISSIONS_REQUEST_RECORD_AUDIO);
             return;
         }
-        runRecognizerSetup();
+        createRecognizer();
 
         // Set up button listener to start/stop recognition
         button.setOnTouchListener(new View.OnTouchListener() {
@@ -80,9 +92,9 @@ public class MainActivity extends AppCompatActivity implements
         });
     }
 
-    private void runRecognizerSetup() {
-        // Recognizer initialization is a time-consuming and it involves IO,
-        // so we execute it in async task
+    private void createRecognizer() {
+        // Recognizer initialization is a time-consuming process and it involves IO,
+        // so we execute it in an async task
         new AsyncTask<Void, Void, Exception>() {
             @Override
             protected Exception doInBackground(Void... params) {
@@ -90,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements
                     Assets assets = new Assets(MainActivity.this);
                     File assetDir = assets.syncAssets();
                     setupRecognizer(assetDir);
+                    createSoundPool(assetDir);
                 } catch (IOException e) {
                     return e;
                 }
@@ -126,6 +139,44 @@ public class MainActivity extends AppCompatActivity implements
         recognizer.addNgramSearch(KWS_SEARCH, languageModel);
     }
 
+    private void createSoundPool(File assetsDir) throws IOException {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            createNewSoundPool();
+        } else {
+            createOldSoundPool();
+        }
+
+        raws = new HashMap<>();
+        File dict = new File(assetsDir, "cp-sphinx.dic");
+        try(BufferedReader br = new BufferedReader(new FileReader(dict))) {
+            String line = br.readLine();
+            while (line != null) {
+                String name = line.split(" ")[0];
+                Log.d("NAME", name);
+                int rawID = soundPool.load(getApplicationContext(), getResources().getIdentifier(name, "raw", getPackageName()), 1);
+                raws.put(name, rawID);
+                line = br.readLine();
+            }
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void createNewSoundPool() {
+        AudioAttributes attributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                .build();
+        soundPool = new SoundPool.Builder()
+                .setAudioAttributes(attributes)
+                .setMaxStreams(1)
+                .build();
+    }
+
+    @SuppressWarnings("deprecation")
+    private void createOldSoundPool() {
+        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String[] permissions, int[] grantResults) {
@@ -133,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements
 
         if (requestCode == PERMISSIONS_REQUEST_RECORD_AUDIO) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                runRecognizerSetup();
+                createRecognizer();
             } else {
                 finish();
             }
@@ -147,6 +198,10 @@ public class MainActivity extends AppCompatActivity implements
         if (recognizer != null) {
             recognizer.cancel();
             recognizer.shutdown();
+        }
+
+        if (soundPool != null) {
+            soundPool.release();
         }
     }
 
@@ -169,11 +224,16 @@ public class MainActivity extends AppCompatActivity implements
      * This callback is called when we stop the recognizer.
      */
     @Override
-    public void onResult(Hypothesis hypothesis) {
+    public void onResult(Hypothesis hypothesis) throws RuntimeException {
         if (hypothesis != null) {
             String text = hypothesis.getHypstr();
+            String[] splits = text.split(" ");
+            if (splits.length > 1) text = splits[splits.length - 1];
             ((TextView) findViewById(R.id.result_text)).setText(text);
             //makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+            if (raws.containsKey(text)) {
+                soundPool.play(raws.get(text), 1, 1, 1, 0, 1f);
+            }
         }
         else
             ((TextView) findViewById(R.id.result_text)).setText("Coba lagi");
