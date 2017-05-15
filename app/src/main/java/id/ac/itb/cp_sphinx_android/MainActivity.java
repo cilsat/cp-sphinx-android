@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity implements
     private HashMap<String, Integer> captions;
 
     /* Button to start recognition */
-    ImageButton button;
+    private ImageButton button;
     private boolean isPlaying = false;
 
     /* Audio buffering manager */
-    private HashMap<String, Integer> raws;
+    private HashMap<String, Integer> rawMap;
     private SoundPool soundPool;
 
     @Override
@@ -148,15 +148,15 @@ public class MainActivity extends AppCompatActivity implements
         File dict = new File(assetsDir, "cp-sphinx.dic");
         Context context = getApplicationContext();
         String packageName = getPackageName();
-        raws = new HashMap<>();
+        rawMap = new HashMap<>();
         try(BufferedReader br = new BufferedReader(new FileReader(dict))) {
             String line = br.readLine();
             while (line != null) {
                 String name = line.split(" ")[0];
                 Log.d("NAME", name);
                 int rawID = getResources().getIdentifier(name, "raw", packageName);
-                int rawKey = soundPool.load(context, rawID, 1);
-                raws.put(name, rawKey);
+                int rawVal = soundPool.load(context, rawID, 1);
+                rawMap.put(name, rawVal);
                 line = br.readLine();
             }
         }
@@ -234,8 +234,8 @@ public class MainActivity extends AppCompatActivity implements
             String[] splits = text.split(" ");
             if (splits.length > 1) text = splits[splits.length - 1];
             ((TextView) findViewById(R.id.result_text)).setText(text);
-            if (raws.containsKey(text)) {
-                soundPool.play(raws.get(text), 1, 1, 1, 0, 1f);
+            if (rawMap.containsKey(text)) {
+                soundPool.play(rawMap.get(text), 1, 1, 1, 0, 1f);
             }
         }
         else
