@@ -2,13 +2,40 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/home/cilsat/dev/cp-sphinx-android/model/build/intermediates/bundles/default/classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/incremental-classes/nougat/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="2eddf43a726a7b2050d88a36f5d4802081ff8ac5">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/pre-dexed/debug/classes_466e96e08e11b51d00d361da605fc18385ccb137.jar" />
+        sha1="ca23d6bd4ced9beb61c1cb74af5583210839b44b">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10000/instant-run-bootstrap_bb096afaf7dfcc4fff96b34a17a5b34ba97e1839/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/incremental-runtime-classes/zenfone/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/zenfone/debug/folders/1000/10000/instant-run_e03b04b4db2534113c9faa87659bbc1b48a0316d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/incremental-classes/zenfone/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="407c19e6460c2a247f136773f40538f7d3fc8df3">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/zenfone/debug/folders/1000/10000/instant-run-bootstrap_411fd58d3d0a0cfc29cec8615438ab9f7281a02a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/incremental-runtime-classes/nougat/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10000/instant-run_fa205a5b3107e19f209b167a894e37ee9d4bb9a1/classes.dex" />
     </item>
 
 </items>

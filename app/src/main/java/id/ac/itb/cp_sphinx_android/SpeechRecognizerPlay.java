@@ -29,7 +29,7 @@ public class SpeechRecognizerPlay {
     private final int sampleRate;
     private int bufferSize;
     private final AudioRecord recorder;
-    private final AudioTrack track;
+    //private final AudioTrack track;
     private Thread recognizerThread;
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
     private final Collection<RecognitionListener> listeners = new HashSet();
@@ -46,12 +46,14 @@ public class SpeechRecognizerPlay {
         if (AcousticEchoCanceler.isAvailable()) {
             AcousticEchoCanceler echoCanceler = AcousticEchoCanceler.create(recorder.getAudioSessionId());
             echoCanceler.setEnabled(true);
+            Log.i("ECHO", "Echo canceler available");
         }
         if (NoiseSuppressor.isAvailable()) {
             NoiseSuppressor noiseSuppressor = NoiseSuppressor.create(recorder.getAudioSessionId());
             noiseSuppressor.setEnabled(true);
+            Log.i("NOISE", "Noise suppressor available");
         }
-        this.track = new AudioTrack(AudioManager.STREAM_MUSIC, this.sampleRate, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT, this.bufferSize * 2, AudioTrack.MODE_STREAM);
+        //this.track = new AudioTrack(AudioManager.STREAM_MUSIC, this.sampleRate, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT, this.bufferSize * 2, AudioTrack.MODE_STREAM);
     }
 
     public void addListener(RecognitionListener listener) {
@@ -134,7 +136,7 @@ public class SpeechRecognizerPlay {
 
     public void shutdown() {
         this.recorder.release();
-        this.track.release();
+        //this.track.release();
     }
 
     public String getSearchName() {
@@ -272,10 +274,10 @@ public class SpeechRecognizerPlay {
 
         public void run() {
             SpeechRecognizerPlay.this.recorder.startRecording();
-            SpeechRecognizerPlay.this.track.play();
+            //SpeechRecognizerPlay.this.track.play();
             if(SpeechRecognizerPlay.this.recorder.getRecordingState() == 1) {
                 SpeechRecognizerPlay.this.recorder.stop();
-                SpeechRecognizerPlay.this.track.pause();
+                //SpeechRecognizerPlay.this.track.pause();
                 IOException buffer1 = new IOException("Failed to start recording. Microphone might be already in use.");
                 SpeechRecognizerPlay.this.mainHandler.post(SpeechRecognizerPlay.this.new OnErrorEvent(buffer1));
             } else {
@@ -292,7 +294,7 @@ public class SpeechRecognizerPlay {
                     }
 
                     if(nread > 0) {
-                        SpeechRecognizerPlay.this.track.write(buffer, 0, nread);
+                        //SpeechRecognizerPlay.this.track.write(buffer, 0, nread);
                         SpeechRecognizerPlay.this.decoder.processRaw(buffer, (long)nread, false, false);
                         if(SpeechRecognizerPlay.this.decoder.getInSpeech() != inSpeech) {
                             inSpeech = SpeechRecognizerPlay.this.decoder.getInSpeech();
@@ -313,7 +315,7 @@ public class SpeechRecognizerPlay {
                 }
 
                 SpeechRecognizerPlay.this.recorder.stop();
-                SpeechRecognizerPlay.this.track.pause();
+                //SpeechRecognizerPlay.this.track.pause();
                 SpeechRecognizerPlay.this.decoder.endUtt();
                 SpeechRecognizerPlay.this.mainHandler.removeCallbacksAndMessages((Object)null);
                 if(this.timeoutSamples != -1 && this.remainingSamples <= 0) {

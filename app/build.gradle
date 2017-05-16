@@ -13,8 +13,19 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        zenfone {
+            minSdkVersion 21
+            applicationId 'id.ac.itb.cp_sphinx_android'
+            targetSdkVersion 23
+            versionCode 1
+            versionName '1.1'
+        }
+        nougat {
         }
     }
 }
@@ -22,7 +33,7 @@ android {
 dependencies {
     compile project(':aars')
     compile project(':model')
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

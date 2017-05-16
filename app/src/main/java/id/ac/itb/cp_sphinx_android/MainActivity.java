@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements
     private static final int PERMISSIONS_REQUEST_RECORD_AUDIO = 1;
 
     /* Declare speech recognizer */
-    private SpeechRecognizer recognizer;
+    private SpeechRecognizerPlay recognizer;
     private HashMap<String, Integer> captions;
 
     /* Button to start recognition */
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements
         // The recognizer can be configured to perform multiple searches
         // of different kind and switch between them
 
-        recognizer = SpeechRecognizerSetup.defaultSetup()
+        recognizer = SpeechRecognizerPlaySetup.defaultSetup()
                 .setAcousticModel(new File(assetsDir, "semi-250"))
                 .setDictionary(new File(assetsDir, "cp-sphinx.dic"))
                 //.setRawLogDir(assetsDir) // Logging of raw audio
@@ -146,14 +146,14 @@ public class MainActivity extends AppCompatActivity implements
         }
 
         File dict = new File(assetsDir, "cp-sphinx.dic");
-        Context context = getApplicationContext();
-        String packageName = getPackageName();
         rawMap = new HashMap<>();
         try(BufferedReader br = new BufferedReader(new FileReader(dict))) {
+            Context context = getApplicationContext();
+            String packageName = getPackageName();
             String line = br.readLine();
             while (line != null) {
                 String name = line.split(" ")[0];
-                Log.d("NAME", name);
+                //Log.d("NAME", name);
                 int rawID = getResources().getIdentifier(name, "raw", packageName);
                 int rawVal = soundPool.load(context, rawID, 1);
                 rawMap.put(name, rawVal);
@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements
                 .build();
         soundPool = new SoundPool.Builder()
                 .setAudioAttributes(attributes)
-                .setMaxStreams(1)
+                .setMaxStreams(5)
                 .build();
     }
 
@@ -216,6 +216,7 @@ public class MainActivity extends AppCompatActivity implements
     public void onPartialResult(Hypothesis hypothesis) {
         if (hypothesis != null) {
             String text = hypothesis.getHypstr();
+            Log.d("HYP", text);
             String[] splits = text.split(" ");
             if (splits.length > 1) text = splits[splits.length - 1];
             ((TextView) findViewById(R.id.result_text)).setText(text);
@@ -231,11 +232,12 @@ public class MainActivity extends AppCompatActivity implements
     public void onResult(Hypothesis hypothesis) throws RuntimeException {
         if (hypothesis != null) {
             String text = hypothesis.getHypstr();
+            Log.d("RES", text);
             String[] splits = text.split(" ");
             if (splits.length > 1) text = splits[splits.length - 1];
             ((TextView) findViewById(R.id.result_text)).setText(text);
             if (rawMap.containsKey(text)) {
-                soundPool.play(rawMap.get(text), 1, 1, 1, 0, 1f);
+                soundPool.play(rawMap.get(text), 1.5f, 1.5f, 1, 0, 1f);
             }
         }
         else
