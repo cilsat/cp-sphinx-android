@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: aars-unspecified">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/75c631db1456add193bb954e23af71ed7b03a44d/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/75c631db1456add193bb954e23af71ed7b03a44d/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

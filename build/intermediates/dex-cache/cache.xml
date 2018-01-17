@@ -3,12 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/incremental-classes/nougat/debug/instant-run-bootstrap.jar"
+        jar="/home/cilsat/.android/build-cache/e861de2af3fa439aa1dca849cf3980cdc83e8f25/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="ca23d6bd4ced9beb61c1cb74af5583210839b44b">
-        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10000/instant-run-bootstrap_bb096afaf7dfcc4fff96b34a17a5b34ba97e1839/classes.dex" />
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_b6605e9301c667fe642ee30956994de48e542f32/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/.android/build-cache/04aae2e5522ade7fcefa025e6ee7fb6cfd0849ac/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_b98fd9aaf0d5c24fa62c3625d37ee24e77295615/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -21,6 +30,51 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/cilsat/.android/build-cache/cd214a00f25fdb93ffebedeb1ab52266e98a9c8d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_e278a26c38a28aab632b941811d1caea682dfdc7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/opt/android-sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/constraint-layout-solver-1.0.2_acc73e4ee5a95a149a64c98ae3a02c1a889b532c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/.android/build-cache/75c631db1456add193bb954e23af71ed7b03a44d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6849e24d764fc75a3df80f7c1e39196c885c4f8b">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_456cc44c810f29c9f4ceaa9eeb42fcf63e1f9f3f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/.android/build-cache/85e04f28f4e05fb20ea94b21e39c0b7788a51549/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_7a50d2e9b3463422ffdf7f07de3df5d30a1f613d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/.android/build-cache/d386ad35a9dc0f6e1d32703359e3eb25bf11c7c4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_65691dd8dd82a6ac53f33dcd433b88ed7e53bc46/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/incremental-classes/zenfone/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
@@ -30,12 +84,75 @@
     </item>
     <item
         is-multidex="true"
+        jar="/opt/android-sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/support-annotations-25.3.1_1fadc471903c80a4d171ab39179d210e4d54d262/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/.android/build-cache/52fc86e00683e5e577f86b6904f7cc4d49ba0409/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_574c0b37eef81c23bd2e0a82631c6b4d03322170/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/.android/build-cache/daa7f559dee3287397a7f9c442c6b4a94ffc3fb5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_c600b64226dd891444170670bbbab369e54b0d60/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/incremental-runtime-classes/nougat/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
         <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10000/instant-run_fa205a5b3107e19f209b167a894e37ee9d4bb9a1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/.android/build-cache/2084895be8e9cc2d931e9db5e7f6591066cc1a98/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_4d44dc189829560874a8e051d22caf5212a19f5b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/.android/build-cache/e860cf4250fd5547b65891aaa762a232b8230ebf/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_67368b5d3b6d94980582c08d0cbdfb36c173ede1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/.android/build-cache/dc54cfe9dc1aa34541cedb1fc919e646e10a5dc9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10/classes_a59e672cd5ce494777920bfb90f16e43261bfb8a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/incremental-classes/nougat/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0074871e9f5ae649ecfe7d7d5ec9ee0088b6d03a">
+        <dex dex="/home/cilsat/dev/cp-sphinx-android/app/build/intermediates/transforms/dex/nougat/debug/folders/1000/10000/instant-run-bootstrap_bb096afaf7dfcc4fff96b34a17a5b34ba97e1839/classes.dex" />
     </item>
 
 </items>

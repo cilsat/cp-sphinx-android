@@ -165,12 +165,12 @@ public class MainActivity extends AppCompatActivity implements
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void createNewSoundPool() {
         AudioAttributes attributes = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION)
+                .setUsage(AudioAttributes.USAGE_MEDIA)
                 .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
                 .build();
         soundPool = new SoundPool.Builder()
                 .setAudioAttributes(attributes)
-                .setMaxStreams(5)
+                .setMaxStreams(1)
                 .build();
     }
 
@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity implements
             if (splits.length > 1) text = splits[splits.length - 1];
             ((TextView) findViewById(R.id.result_text)).setText(text);
             if (rawMap.containsKey(text)) {
-                soundPool.play(rawMap.get(text), 1.5f, 1.5f, 1, 0, 1f);
+                soundPool.play(rawMap.get(text), 2.f, 2.f, 1, 0, 1.f);
             }
         }
         else
